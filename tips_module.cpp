@@ -8,6 +8,11 @@
 
 #include <stdio.h>
 
+ll nCk(ll n, ll k){
+    if(n < k) return 0;
+    return fact[n] * (finv[k]*finv[n-k]%mod) %mod;
+}
+
 ll modpow(ll x, ll n){
     ll res = 1;
     while(n > 0){
@@ -17,3 +22,8 @@ ll modpow(ll x, ll n){
     }
     return res;
 }
+
+ll inv(ll x){
+    return modpow(x, mod-2);
+}
+
