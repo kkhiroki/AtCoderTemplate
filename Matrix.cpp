@@ -16,6 +16,9 @@ struct Matrix {
 Matrix operator * (Matrix A, Matrix B) {
     ll mat_size = A.size();
     Matrix R(mat_size, mat_size);
+    REP(i, mat_size) REP(j, mat_size){
+        A[i][j] %= mod; B[i][j] %= mod;
+    }
     ll modsq = 4*mod*mod;
     REP(i, mat_size) REP(j, mat_size) REP(k, mat_size){
         R[i][j] += A[i][k] * B[k][j];
