@@ -27,3 +27,12 @@ ll inv(ll x){
     return modpow(x, mod-2);
 }
 
+void prepare(){
+    fact[0] = 1;
+    rep(i, size-1) fact[i+1] = fact[i]*(i+1)%mod;
+    finv[size-1] = inv(fact[size-1]);
+    for (ll i = size-1; i > 0; i--) {
+        finv[i-1] = finv[i]*i%mod;
+    }
+}
+
