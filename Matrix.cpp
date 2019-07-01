@@ -1,10 +1,3 @@
-//
-//  Matrix.cpp
-//  AtCoderDev
-//
-//  Created by Hiroki Kojima on 2019/06/10.
-//  Copyright © 2019 Hiroki Kojima. All rights reserved.
-//
 struct Matrix {
     vvl val;
     Matrix(ll n, ll m, ll x = 0) : val(n, vl(m, x)) {}
