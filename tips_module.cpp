@@ -1,3 +1,7 @@
+
+const ll size =2000;
+ll fact[size], finv[size];
+
 ll nCk(ll n, ll k){
     if(n < k) return 0;
     return fact[n] * (finv[k]*finv[n-k]%mod) %mod;
