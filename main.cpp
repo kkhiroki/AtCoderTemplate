@@ -77,7 +77,7 @@ template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } ret
 
 int main(){
     // debug start //
-    ifstream file("/Users/hiroki/AtCoder/in.txt");
+    ifstream file("/Users/hiroki/AtCoderDev/in.txt");
     if(file.is_open())
         cin.rdbuf(file.rdbuf());
     // debug end //
