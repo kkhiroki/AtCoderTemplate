@@ -76,11 +76,7 @@ template<class T> bool chmax(T &a, T b) { if (a < b) { a = b; return true; } ret
 template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } return false; }
 
 int main(){
-    // debug start //
-    ifstream file("/Users/hiroki/AtCoderDev/in.txt");
-    if(file.is_open())
-        cin.rdbuf(file.rdbuf());
-    // debug end //
+    /*WiilBeRemovedWhenSubmit*/ifstream file("/Users/hiroki/AtCoderDev/in.txt"); if(file.is_open()) cin.rdbuf(file.rdbuf());
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     
