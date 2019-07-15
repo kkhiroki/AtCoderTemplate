@@ -1,5 +1,5 @@
 
-const ll size =2000;
+const ll size = 300300;
 ll fact[size], finv[size];
 
 ll nCk(ll n, ll k){

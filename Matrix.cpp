@@ -9,21 +9,21 @@ struct Matrix {
 Matrix operator * (Matrix A, Matrix B) {
     ll mat_size = A.size();
     Matrix R(mat_size, mat_size);
-    REP(i, mat_size) REP(j, mat_size){
+    rep(i, mat_size) rep(j, mat_size){
         A[i][j] %= mod; B[i][j] %= mod;
     }
     ll modsq = 4*mod*mod;
-    REP(i, mat_size) REP(j, mat_size) REP(k, mat_size){
+    rep(i, mat_size) rep(j, mat_size) rep(k, mat_size){
         R[i][j] += A[i][k] * B[k][j];
         if(R[i][j]>modsq) R[i][j] %= mod;
     }
-    REP(i, mat_size) REP(j, mat_size) R[i][j] %= mod;
+    rep(i, mat_size) rep(j, mat_size) R[i][j] %= mod;
     return R;
 }
 
 Matrix pow(Matrix A, ll n) {
     Matrix R(A.size(), A.size());
-    REP(i, A.size()) R[i][i] = 1;
+    rep(i, A.size()) R[i][i] = 1;
     while (n > 0) {
         if (n & 1) R = R * A;
         A = A * A;
