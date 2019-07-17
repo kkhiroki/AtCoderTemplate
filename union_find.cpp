@@ -3,7 +3,7 @@ struct UnionFind{
     vl rank;
     map<ll, ll> size;
     UnionFind(ll N) : par(N, 0), rank(N, 0){
-        for(int i = 0; i < N; i++){
+        for(ll i = 0; i < N; i++){
             par[i] = i; size[i] = 1;
         }
     }
