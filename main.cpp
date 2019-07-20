@@ -77,6 +77,9 @@ inline ll popcnt(ll x){return __builtin_popcountll((unsigned long long)x);};
 template<class T> bool chmax(T &a, T b) { if (a < b) { a = b; return true; } return false; }
 template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } return false; }
 
+
+
+
 int main(){
     /*WiilBeRemovedWhenSubmit*/ifstream file("/Users/hiroki/AtCoderDev/in.txt"); if(file.is_open()) cin.rdbuf(file.rdbuf());
     ios_base::sync_with_stdio(false);
