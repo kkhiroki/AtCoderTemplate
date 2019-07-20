@@ -51,6 +51,7 @@ const string endstr = "\n";
 #define ss second
 #define pb push_back
 #define epb emplace_back
+#define ALL(X) (X).begin(),(X).end()
 
 template <typename T>
 T gcd(T a, T b) {
