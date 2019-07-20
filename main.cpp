@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <fstream>
 #include <unistd.h>
+#include <string.h>
 #include <string>
 #include <numeric>
 #include <queue>
