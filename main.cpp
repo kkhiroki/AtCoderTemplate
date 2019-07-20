@@ -73,7 +73,7 @@ vector<T> uniquen(vector<T> vec){
     return vec;
 }
 
-inline ll popcnt(ll x){return __builtin_popcount((unsigned int)x);};
+inline ll popcnt(ll x){return __builtin_popcountll((unsigned long long)x);};
 template<class T> bool chmax(T &a, T b) { if (a < b) { a = b; return true; } return false; }
 template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } return false; }
 
