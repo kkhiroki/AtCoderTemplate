@@ -64,7 +64,25 @@ struct ModInt {
     static int get_mod() { return mod; }
 };
 
-using mint = ModInt< mod >;
+using mint = ModInt<mod>;
 typedef vector<mint> vm;
 typedef vector<vm> vvm;
 typedef vector<vvm> vvvm;
+
+const ll size = 30300;
+mint fact[size], finv[size];
+
+mint nCk(ll n, ll k){
+    if(n < k) return 0;
+    return fact[n]*finv[k]*finv[n-k];
+}
+
+void prepare(){
+    fact[0] = 1;
+    rep(i, size-1) fact[i+1] = fact[i]*mint(i+1);
+    finv[size-1] = fact[size-1].inv();
+    for (ll i = size-1; i > 0; i--) {
+        finv[i-1] = finv[i]*mint(i);
+    }
+}
+
