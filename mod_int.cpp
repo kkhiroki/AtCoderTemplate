@@ -1,5 +1,4 @@
 
-//###### should define mod !!! ##############
 //const ll mod = 1e9+7;
 template< int mod >
 struct ModInt {
@@ -19,7 +18,7 @@ struct ModInt {
         return *this;
     }
     ModInt &operator/=(const ModInt &p) {
-        *this *= p.inverse();
+        *this *= p.inv();
         return *this;
     }
     ModInt operator-() const { return ModInt(-x); }
@@ -30,7 +29,7 @@ struct ModInt {
     bool operator==(const ModInt &p) const { return x == p.x; }
     bool operator!=(const ModInt &p) const { return x != p.x; }
     
-    ModInt inverse() const {
+    ModInt inv() const {
         int a = x, b = mod, u = 1, v = 0, t;
         while(b > 0) {
             t = a / b;
