@@ -16,6 +16,7 @@
 #include <set>
 #include <stack>
 #include <cassert>
+#include <functional>
 using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
@@ -76,7 +77,9 @@ vector<T> uniquen(vector<T> vec){
 inline ll popcnt(ll x){return __builtin_popcountll((unsigned long long)x);};
 template<class T> bool chmax(T &a, T b) { if (a < b) { a = b; return true; } return false; }
 template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } return false; }
-
+//friend bool operator<(const stc& lhs, const stc& rhs){
+//    return std::tie(lhs.l, lhs.r) < std::tie(rhs.l, rhs.r);
+//}
 
 
 
