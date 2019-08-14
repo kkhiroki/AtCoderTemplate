@@ -11,7 +11,7 @@ struct BinaryIndexedTree{
         return ret;
     }
     
-    void add(int k, T x){
+    void add(ll k, T x){
         for(++k; k < data.size(); k += k&-k) data[k] += x;
     }
 };
