@@ -70,6 +70,7 @@ bool p_comp_ss(const PL p1, const PL p2){ return p1.second < p2.second;};
 bool p_comp_sg(const PL p1, const PL p2){ return p1.second > p2.second;};
 template <typename T>
 vector<T> uniquen(vector<T> vec){
+    sort(ALL(vec));
     vec.erase(unique(vec.begin(), vec.end()), vec.end());
     return vec;
 }
