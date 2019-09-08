@@ -68,7 +68,7 @@ typedef vector<mint> vm;
 typedef vector<vm> vvm;
 typedef vector<vvm> vvvm;
 
-const ll size = 30300;
+const ll size = 300300; // ******** CHECK ME !!!!!!! ********
 mint fact[size], finv[size];
 
 mint nCk(ll n, ll k){
