@@ -46,12 +46,12 @@ struct RollingHash {
 };
 
 using RH1 = RollingHash< 1000000007 >;
-using RH2 = RollingHash< 2147483647 >;
-using RH3 = RollingHash< 2147483629 >;
+using RH2 = RollingHash< 1000000009 >;
+using RH3 = RollingHash< 998244353 >;
 
 
-const vector<unsigned int> mods = {1000000007, 2147483647, 2147483629};
-const vector<unsigned int> bases = {10007, 1000000007, 2147483647};
+const vector<unsigned int> mods = {1000000007, 1000000009, 998244353};
+const vector<unsigned int> bases = {1000037, 1000033, 5000011};
 
 struct RollingHashMultiple{
 private:
@@ -70,11 +70,11 @@ public:
         return true;
     }
     
-    vl getHashes(int l, int r){
+    vl getHashes(int l, int r, int cnt = 1){
         vl res;
         res.pb(rh1.get(l, r));
-        res.pb(rh2.get(l, r));
-        res.pb(rh3.get(l, r));
+        if(cnt >= 2) res.pb(rh2.get(l, r));
+        if(cnt >= 3)res.pb(rh3.get(l, r));
         return res;
     }
 };
