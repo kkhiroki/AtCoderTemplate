@@ -1,3 +1,19 @@
+struct RndGen{
+private:
+    std::random_device seed_gen;
+    std::mt19937 engine;
+    uniform_int_distribution<> uni_dist;
+public:
+    RndGen(int lb, int ub){
+        this->engine = std::mt19937(this->seed_gen());
+        this->uni_dist = uniform_int_distribution<>(lb, ub);
+    }
+    
+    int getUniIntRnd(){
+        return this->uni_dist(this->engine);
+    }
+};
+
 template< unsigned mod >
 struct RollingHash {
     vector< unsigned > hashed, power;
@@ -45,13 +61,16 @@ struct RollingHash {
     }
 };
 
-using RH1 = RollingHash< 1000000007 >;
-using RH2 = RollingHash< 1000000009 >;
-using RH3 = RollingHash< 998244353 >;
+const unsigned int mod1 = 1000000007;
+const unsigned int mod2 = 1000000009;
+const unsigned int mod3 = 998244353;
 
+using RH1 = RollingHash< mod1 >;
+using RH2 = RollingHash< mod2 >;
+using RH3 = RollingHash< mod3 >;
 
-const vector<unsigned int> mods = {1000000007, 1000000009, 998244353};
-const vector<unsigned int> bases = {1000037, 1000033, 5000011};
+const unsigned int base1 = 1000037;
+const unsigned int base2 = 1000033;
 
 struct RollingHashMultiple{
 private:
@@ -61,20 +80,14 @@ private:
     
 public:
     RollingHashMultiple(string& s)
-    : rh1(s, bases[0]), rh2(s, bases[1]), rh3(s, bases[2]){}
+    : rh1(s, base1),
+    rh2(s, base2),
+    rh3(s, std::make_unique<RndGen>(2, mod3-2)->getUniIntRnd()){}
     
     bool match(int l1, int r1, int l2, int r2){
         if(rh1.get(l1, r1) != rh1.get(l2, r2)) return false;
         if(rh2.get(l1, r1) != rh2.get(l2, r2)) return false;
         if(rh3.get(l1, r1) != rh3.get(l2, r2)) return false;
         return true;
-    }
-    
-    vl getHashes(int l, int r, int cnt = 1){
-        vl res;
-        res.pb(rh1.get(l, r));
-        if(cnt >= 2) res.pb(rh2.get(l, r));
-        if(cnt >= 3)res.pb(rh3.get(l, r));
-        return res;
     }
 };
