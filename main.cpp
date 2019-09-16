@@ -17,6 +17,7 @@
 #include <stack>
 #include <cassert>
 #include <functional>
+#include <random>
 using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
