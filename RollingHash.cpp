@@ -82,7 +82,7 @@ public:
     RollingHashMultiple(string& s)
     : rh1(s, base1),
     rh2(s, base2),
-    rh3(s, std::make_unique<RndGen>(2, mod3-2)->getUniIntRnd()){}
+    rh3(s, std::make_unique<RndGen>(mod3/2, mod3-2)->getUniIntRnd()){}
     
     bool match(int l1, int r1, int l2, int r2){
         if(rh1.get(l1, r1) != rh1.get(l2, r2)) return false;
