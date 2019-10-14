@@ -68,12 +68,16 @@ typedef vector<mint> vm;
 typedef vector<vm> vvm;
 typedef vector<vvm> vvvm;
 
-const ll size = 300300; // ******** CHECK ME !!!!!!! ********
+//const ll size = 300300; // ******** CHECK ME !!!!!!! ********
 mint fact[size], finv[size];
 
 mint nCk(ll n, ll k){
     if(n < k) return 0;
     return fact[n]*finv[k]*finv[n-k];
+}
+
+mint Catalan(ll N){
+    return nCk(2*N, N) - nCk(2*N, N-1);
 }
 
 void prepare(){
