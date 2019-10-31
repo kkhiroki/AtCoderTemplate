@@ -1,5 +1,5 @@
-const ll size = 100100;
-const ll MX_LOG = 20;
+//const ll size = 100100; // ******** CHECK ME !!!!!!! ********
+// const ll MX_LOG = 20; // ******** CHECK ME !!!!!!! ********
 vl G[size];
 ll par[MX_LOG][size];
 ll depth[size];
