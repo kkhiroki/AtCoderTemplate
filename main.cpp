@@ -43,7 +43,7 @@ typedef pair<ll, ll> PL;
 typedef vector<PL> vpl;
 typedef vector<vector<PL>> vvpl;
 typedef vector<vvpl> vvvpl;
-typedef tuple<ll, ll, ll> TL;
+typedef pair<ll, PL> TL;
 typedef vector<TL> vtl;
 typedef vector<vtl> vvtl;
 const int INF = 1001001001;
