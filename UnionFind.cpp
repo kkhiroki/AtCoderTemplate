@@ -1,10 +1,10 @@
 struct UnionFind{
     vl par;
     vl rank;
-    map<ll, ll> size;
-    UnionFind(ll N) : par(N, 0), rank(N, 0){
+    vl size;
+    UnionFind(ll N) : par(N, 0), rank(N, 0), size(N, 1){
         for(ll i = 0; i < N; i++){
-            par[i] = i; size[i] = 1;
+            par[i] = i;
         }
     }
     
