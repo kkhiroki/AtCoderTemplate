@@ -16,7 +16,7 @@ struct UnionFind{
         }
     }
     
-    void unite(ll x, ll y){
+    void merge(ll x, ll y){
         ll rx = root(x); ll ry = root(y);
         if(rx == ry) return;
         if(rank[rx] < rank[ry]) swap(rx, ry);
@@ -28,7 +28,7 @@ struct UnionFind{
         }
     }
     
-    ll get_size(ll x){
+    ll getSize(ll x){
         return size[root(x)];
     }
     
