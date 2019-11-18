@@ -71,6 +71,7 @@ using RH3 = RollingHash< mod3 >;
 
 const unsigned int base1 = 1000037;
 const unsigned int base2 = 1000033;
+const unsigned int base_rnd = std::make_unique<RndGen>(mod3/2, mod3-2)->getUniIntRnd();
 
 struct RollingHashMultiple{
 private:
@@ -82,12 +83,20 @@ public:
     RollingHashMultiple(string& s)
     : rh1(s, base1),
     rh2(s, base2),
-    rh3(s, std::make_unique<RndGen>(mod3/2, mod3-2)->getUniIntRnd()){}
+    rh3(s, base_rnd){}
     
     bool match(int l1, int r1, int l2, int r2){
         if(rh1.get(l1, r1) != rh1.get(l2, r2)) return false;
         if(rh2.get(l1, r1) != rh2.get(l2, r2)) return false;
         if(rh3.get(l1, r1) != rh3.get(l2, r2)) return false;
         return true;
+    }
+    
+    vector<unsigned int> getHashes(int l, int r){
+        vector<unsigned int> res;
+        res.pb(rh1.get(l, r));
+        res.pb(rh2.get(l, r));
+        res.pb(rh3.get(l, r));
+        return res;
     }
 };
