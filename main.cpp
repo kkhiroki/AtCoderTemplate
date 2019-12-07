@@ -88,6 +88,9 @@ template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } ret
 //    return std::tie(lhs.l, lhs.r) < std::tie(rhs.l, rhs.r);
 //}
 
+bool bit(ll st, ll b){
+    return ((st>>b)&1) == 1;
+}
 
 
 int main(){
