@@ -93,8 +93,10 @@ bool bit(ll st, ll b){return ((st>>b)&1) == 1;}
 
 
 int main(){
+#ifdef __DEBUG_LOCAL__
     ifstream file("../../../../../in.txt");
     if(file.is_open()) cin.rdbuf(file.rdbuf());
+#endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     
