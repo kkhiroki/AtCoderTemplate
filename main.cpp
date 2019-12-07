@@ -46,7 +46,8 @@ typedef vector<vvpl> vvvpl;
 typedef pair<ll, PL> TL;
 typedef vector<TL> vtl;
 typedef vector<vtl> vvtl;
-const int INF = 1001001001;
+typedef long double ld;
+typedef vector<ld> vld;
 const ll LINF = 1e17;
 const double pi = 3.1415926535897932;
 const string endstr = "\n";
@@ -75,7 +76,7 @@ bool p_comp_fg(const PL p1, const PL p2){ return p1.first > p2.first;};
 bool p_comp_ss(const PL p1, const PL p2){ return p1.second < p2.second;};
 bool p_comp_sg(const PL p1, const PL p2){ return p1.second > p2.second;};
 template <typename T>
-vector<T> uniquen(vector<T> vec){
+vector<T> uniquen(vector<T> vec /* copy */){
     sort(ALL(vec));
     vec.erase(unique(vec.begin(), vec.end()), vec.end());
     return vec;
@@ -84,13 +85,11 @@ vector<T> uniquen(vector<T> vec){
 inline ll popcnt(ll x){return __builtin_popcountll((unsigned long long)x);};
 template<class T> bool chmax(T &a, T b) { if (a < b) { a = b; return true; } return false; }
 template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } return false; }
-//friend bool operator<(const stc& lhs, const stc& rhs){
+//friend bool operator<(const tpl& lhs, const tpl& rhs){
 //    return std::tie(lhs.l, lhs.r) < std::tie(rhs.l, rhs.r);
 //}
 
-bool bit(ll st, ll b){
-    return ((st>>b)&1) == 1;
-}
+bool bit(ll st, ll b){return ((st>>b)&1) == 1;}
 
 
 int main(){
