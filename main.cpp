@@ -93,6 +93,7 @@ int main(){
 #endif
     ios_base::sync_with_stdio(false); cin.tie(nullptr);
     
-    pthread_testcancel();
+    
+    
     return 0;
 }
