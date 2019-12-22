@@ -39,6 +39,9 @@ typedef vector<vector<char>> vvc;
 typedef vector<double> vd;
 typedef vector<vd> vvd;
 typedef vector<vvd> vvvd;
+typedef long double LD;
+typedef vector<LD> vld;
+typedef vector<pair<LD, LD>> vpld;
 typedef pair<ll, ll> PL;
 typedef vector<PL> vpl;
 typedef vector<vector<PL>> vvpl;
@@ -62,14 +65,8 @@ const string endstr = "\n";
 #define epb emplace_back
 #define ALL(X) (X).begin(),(X).end()
 
-template <typename T>
-T gcd(T a, T b) {
-    return (a == 0) ? b : gcd(b%a, a);
-}
-template <typename T>
-T lcm(T a, T b) {
-    return a / gcd(a, b) * b;
-}
+template <typename T> T gcd(T a, T b) {return (a == 0) ? b : gcd(b%a, a);}
+template <typename T> T lcm(T a, T b) { return a / gcd(a, b) * b;}
 
 bool p_comp_fs(const PL p1, const PL p2){ return p1.first < p2.first;};
 bool p_comp_fg(const PL p1, const PL p2){ return p1.first > p2.first;};
@@ -77,9 +74,7 @@ bool p_comp_ss(const PL p1, const PL p2){ return p1.second < p2.second;};
 bool p_comp_sg(const PL p1, const PL p2){ return p1.second > p2.second;};
 template <typename T>
 vector<T> uniquen(vector<T> vec /* copy */){
-    sort(ALL(vec));
-    vec.erase(unique(vec.begin(), vec.end()), vec.end());
-    return vec;
+    sort(ALL(vec)); vec.erase(unique(vec.begin(), vec.end()), vec.end()); return vec;
 }
 
 inline ll popcnt(ll x){return __builtin_popcountll((unsigned long long)x);};
@@ -94,11 +89,10 @@ bool bit(ll st, ll b){return ((st>>b)&1) == 1;}
 
 int main(){
 #ifdef __DEBUG_LOCAL__
-    ifstream file("../../../../../in.txt");
-    if(file.is_open()) cin.rdbuf(file.rdbuf());
+    ifstream file("../../../../../in.txt"); if(file.is_open()) cin.rdbuf(file.rdbuf());
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    
     
     return 0;
 }
