@@ -68,6 +68,12 @@ typedef vector<mint> vm;
 typedef vector<vm> vvm;
 typedef vector<vvm> vvvm;
 
+typedef unordered_map<ll, mint> uim;
+typedef unordered_map<ll, uim> uuim;
+typedef unordered_map<ll, uuim> uuuim;
+
+
+
 //const ll size = 300300; // ******** CHECK ME !!!!!!! ********
 mint fact[size], finv[size];
 
