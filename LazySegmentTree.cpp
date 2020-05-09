@@ -1,5 +1,3 @@
-
-// Usage: see http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=4450831#1
 template <typename X, typename M>
 class LazySegmentTree{
 private:
@@ -26,6 +24,11 @@ public:
         
         this->data = std::vector<X>(2*this->sz - 1, ex);
         this->lazy = std::vector<M>(2*this->sz - 1, em);
+        
+        rep(i, v.size()) this->data[i+ sz-1] = v.at(i);
+        for(ll k = sz-2; k >= 0; k--){
+            this->data[k] = fx(data[2*k+1], data[2*k+2]);
+        }
     }
     
     void eval(ll k, size_t len){
@@ -44,8 +47,7 @@ public:
         
         eval(k, sr-sl);
         if(qr <= sl || sr <= ql) return;
-        
-        if(ql <= sl && sr <= qr){
+        else if(ql <= sl && sr <= qr){
             lazy[k] = fm(lazy[k], val);
             eval(k, sr-sl);
         }
@@ -68,5 +70,9 @@ public:
             X rval = query(ql, qr, 2*k+2, (sl+sr)/2, sr);
             return fx(lval, rval);
         }
+    }
+    
+    X operator[](ll idx) const{
+        return this->data.at(idx + sz-1);
     }
 };
