@@ -10,8 +10,8 @@ private:
     vector<M> lazy;
     FX fx;
     FA fa;
-    std::function<M(M, M)> fm;
-    std::function<M(M, size_t)> fp;
+    FM fm;
+    FP fp;
     const X ex; // unit for X
     const M em; // unit for M
 
