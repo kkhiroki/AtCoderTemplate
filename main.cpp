@@ -90,7 +90,11 @@ template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } ret
 bool bit(ll st, ll b){return ((st>>b)&1) == 1;}
 
 
-int main(){
+int main(int argc, const char* argv[]){
+#ifdef __LOCAL_LINUX__
+    std::string file_name = argv[1]; ifstream cin(file_name.c_str());
+#endif
+
 #ifdef __DEBUG_LOCAL__
     ifstream file("../../../../../in.txt"); if(file.is_open()) cin.rdbuf(file.rdbuf());
 #endif
