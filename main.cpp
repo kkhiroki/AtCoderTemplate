@@ -92,11 +92,8 @@ bool bit(ll st, ll b){return ((st>>b)&1) == 1;}
 
 int main(int argc, const char* argv[]){
 
-#if defined(__LOCAL_LINUX__)
-    std::string file_name = argv[1];
-    ifstream in_file(file_name.c_str()); cin.rdbuf(in_file.rdbuf());
-#elif defined(__LOCAL_MAC__)
-    ifstream file("../../../../../in.txt"); if(file.is_open()) cin.rdbuf(file.rdbuf());
+#if defined(__LOCAL__)
+    std::string file_name = argv[1]; ifstream in_file(file_name.c_str()); cin.rdbuf(in_file.rdbuf());
 #else
     ios_base::sync_with_stdio(false); cin.tie(nullptr);
 #endif
