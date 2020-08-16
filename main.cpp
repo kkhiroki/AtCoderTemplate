@@ -90,6 +90,11 @@ template<class T> bool chmin(T &a, T b) { if (a > b) { a = b; return true; } ret
 bool bit(ll st, ll b){return ((st>>b)&1) == 1;}
 
 
+
+
+
+
+
 int main(int argc, const char* argv[]){
 
 #if defined(__LOCAL__)
@@ -97,6 +102,9 @@ int main(int argc, const char* argv[]){
 #else
     ios_base::sync_with_stdio(false); cin.tie(nullptr);
 #endif
+
+
+
     
 
     return 0;
