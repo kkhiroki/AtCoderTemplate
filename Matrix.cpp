@@ -31,4 +31,3 @@ Matrix pow(Matrix A, ll n) {
     }
     return R;
 }
-#include <stdio.h>

@@ -23,3 +23,20 @@ vector<bool> prime_table(ll n) {
     return prime;
 }
 
+vector<ll> prime_table(ll n) {
+    vector<ll> prime(n + 1, -1);
+
+    if(n >= 0) prime[0] = 0;
+    if(n >= 1) prime[1] = 1;
+    
+    for(ll i = 2; i <= n; i++) {
+        if(prime[i] != -1) continue;
+
+        prime[i] = i;
+        for(ll j = i + i; j <= n; j += i) {
+            prime[j] = i;
+        }
+    }
+    return prime;
+}
+
