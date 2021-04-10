@@ -74,8 +74,8 @@ typedef unordered_map<ll, uuim> uuuim;
 
 
 
-//const ll size = 300300; // ******** CHECK ME !!!!!!! ********
-mint fact[size], finv[size];
+//const ll sz = 300300; // ******** CHECK ME !!!!!!! ********
+mint fact[sz], finv[sz];
 
 mint nCk(ll n, ll k){
     if(n < k) return 0;
@@ -88,9 +88,9 @@ mint Catalan(ll N){
 
 void prepare(){
     fact[0] = 1;
-    rep(i, size-1) fact[i+1] = fact[i]*mint(i+1);
-    finv[size-1] = fact[size-1].inv();
-    for (ll i = size-1; i > 0; i--) {
+    rep(i, sz-1) fact[i+1] = fact[i]*mint(i+1);
+    finv[sz-1] = fact[sz-1].inv();
+    for (ll i = sz-1; i > 0; i--) {
         finv[i-1] = finv[i]*mint(i);
     }
 }
