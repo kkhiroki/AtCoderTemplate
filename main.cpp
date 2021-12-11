@@ -19,8 +19,10 @@
 #include <cassert>
 #include <functional>
 #include <random>
+#include <bitset>
 using namespace std;
 typedef long long ll;
+typedef long double ld;
 typedef vector<int> vi;
 typedef vector<ll> vl;
 typedef vector<vl> vvl;
@@ -40,12 +42,11 @@ typedef vector<vector<char>> vvc;
 typedef vector<double> vd;
 typedef vector<vd> vvd;
 typedef vector<vvd> vvvd;
+typedef vector<long double> vld;
+typedef vector<vld> vvld;
 typedef unordered_map<ll, ll> uii;
 typedef unordered_map<ll, ll> uuii;
 typedef unordered_map<ll, ll> uuuii;
-typedef long double LD;
-typedef vector<LD> vld;
-typedef vector<pair<LD, LD>> vpld;
 typedef pair<ll, ll> PL;
 typedef vector<PL> vpl;
 typedef vector<vector<PL>> vvpl;
@@ -53,10 +54,9 @@ typedef vector<vvpl> vvvpl;
 typedef pair<ll, PL> TL;
 typedef vector<TL> vtl;
 typedef vector<vtl> vvtl;
-typedef long double ld;
-typedef vector<ld> vld;
+typedef bitset<64> bs;
 const ll LINF = 1e17;
-const double pi = 3.1415926535897932;
+const long double pi = 3.1415926535897932;
 const string endstr = "\n";
 #define FOR(i, a, b) for(ll i = (a); i < b; i++)
 #define RFOR(i, a, b) for(ll i = (a); i > b; i--)
@@ -66,7 +66,6 @@ const string endstr = "\n";
 #define ff first
 #define ss second
 #define pb push_back
-#define epb emplace_back
 #define ALL(X) (X).begin(),(X).end()
 
 template <typename T> T gcd(T a, T b) {return (a == 0) ? b : gcd(b%a, a);}
@@ -93,9 +92,6 @@ bool bit(ll st, ll b){return ((st>>b)&1) == 1;}
 
 
 
-
-
-
 int main(int argc, const char* argv[]){
 
 #if defined(__LOCAL__)
@@ -104,9 +100,7 @@ int main(int argc, const char* argv[]){
     ios_base::sync_with_stdio(false); cin.tie(nullptr);
 #endif
 
-
-
     
-
+    
     return 0;
 }
