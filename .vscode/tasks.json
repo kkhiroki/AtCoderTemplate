@@ -11,10 +11,10 @@
                 "-std=c++17",
                 "-g",
                 "-D",
-                "__LOCAL_LINUX__",
-                "/home/hiroki_kojima/AtCoderTemplate/main.cpp",
+                "__LOCAL__",
+                "${HOME}/AtCoderTemplate/main.cpp",
                 "-o",
-                "/home/hiroki_kojima/AtCoderTemplate/bin/a.out"
+                "${HOME}/AtCoderTemplate/bin/a.out"
             ],
             "group": {
                 "kind": "build",
